@@ -1,0 +1,99 @@
+.inputForm {
+    display: flex;
+    width: 95%;
+    position: relative;
+  }
+  
+  
+.inputTxt {
+  border-radius: 5vw;
+  padding: 1vw;
+  border: none;
+  flex-basis: 100%;
+  font-size: 1.5vw;
+  box-shadow: inset 0 0 0.3vw black;
+
+  &:focus {
+      box-shadow: 0 0 10px 1000px rgba(0, 0, 0, 0.375);
+  }
+}
+
+.btn {
+  background-color: red;
+  color: white;
+  padding: 0.6vw;
+  margin: 0.4vw 0.4vw 0 0;
+  border-radius: 2vw;
+  border: none;
+  font-size: 1.5vw;
+  position: absolute;
+  right: 0px;
+  box-shadow: 0 0 0.6vw black;
+  transition: 0.2s;
+
+  &:hover {
+    background: darken(red, 8%);
+  }
+
+  &:active {
+    background:darken(red,25%);
+    transform: scale(0.8);
+  }
+}
+
+.displayTodos {
+  display: flex;
+  width: 95%;
+  margin: 1.5vw 0 0 0;
+  flex-wrap: wrap;
+  justify-content:center
+}
+
+@media (max-width:700px) {
+  .displayTodos {
+    flex-flow: column nowrap;
+  }
+}
+
+.singleTodo {
+  background: rgb(203, 203, 12);
+  font-size: 1.3vw;
+  padding: 1vw;
+  flex-basis: 45%;
+  margin: 1.2vw;
+  flex-wrap: wrap;
+  border-radius: 0.5vw;
+  transition: 0.2s;
+  position: relative;
+
+  &:hover {
+    transform: scale(1.04);
+  }
+}
+
+@mixin icon($offset) {
+  position: absolute;
+  right: $offset;
+  font-size: 1.5vw;
+  &:active {
+    transform: scale(0.8);
+  }
+}
+
+
+.done {
+  @include icon(0.5vw);
+}
+
+.rem {
+  @include icon(2vw);
+}
+
+.edit {
+  @include icon(4vw);
+}
+
+
+.editBox {
+  font-size: 1.3vw;
+}
